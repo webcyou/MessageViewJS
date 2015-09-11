@@ -1,0 +1,13 @@
+@mixin clearfix {
+    &::after { content: ""; display: block; clear: both; }
+}
+@mixin createStyle {
+    content: "";
+    display: block;
+    position: absolute;
+}
+@mixin ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

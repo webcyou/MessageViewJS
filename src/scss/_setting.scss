@@ -1,0 +1,28 @@
+$experimental-support-for-mozilla: false;
+$experimental-support-for-microsoft: false;
+$experimental-support-for-opera: false;
+
+$use-prefix-webkit: true;
+$use-prefix-blink: false;
+$use-prefix-moz: false;
+$use-prefix-ms: false;
+$use-prefix-o: false;
+
+$baseWidth: 1000px;
+$baseHeight: 800px;
+$imgPath: "../img/";
+
+$mainColor: #fff;
+$subColor: #eee;
+$accentColor: #e73562;
+$fontColor: #333;
+$noticeColor: #f00;
+
+$linkColor: #fff;
+$linkColorVisited: #39f;
+$linkColorHover: #00f;
+$linkColorActive: #00f;
+
+$yellow: #fbd93c;
+
+$fontfamily: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro W3", sans-serif;

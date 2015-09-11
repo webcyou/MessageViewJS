@@ -1,0 +1,19 @@
+{
+  "name": "message_view",
+  "version": "1.0.0",
+  "authors": [
+    "daisuke.takayama"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
