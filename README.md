@@ -151,4 +151,4 @@ Released under the [MIT license](http://opensource.org/licenses/mit-license.php)
 
 ### Thanks
 素材提供：株式会社ブリリアントサービス
-『星宝転生ジュエルセイバー』[](http://www.jewel-s.jp/)
+『星宝転生ジュエルセイバー』[http://www.jewel-s.jp/](http://www.jewel-s.jp/)
