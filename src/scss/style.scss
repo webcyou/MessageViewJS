@@ -1,7 +1,327 @@
 @import "common_inc";
+@import "theme";
 
 p a {
     position: relative;
     font-size: 18px;
     text-align: center;
+}
+
+//top
+section#top.top {
+    .messageView {
+        position: relative;
+        width: 700px;
+        height: 320px;
+        margin: 80px auto 20px;
+        cursor: pointer;
+        .mv-contents {
+            padding: 80px 0 0 0;
+            .mv-name {
+                position: absolute;
+                top: 93px;
+                left: -40px;
+                width: 300px;
+                padding: 6px 10px;
+                background: rgba(47, 109, 174, 0.8);
+                background: -webkit-gradient(linear, left top, right top, from(rgba(47, 109, 174, 0)), color-stop(0.1, rgba(47, 109, 174, 0.8)), color-stop(0.9, rgba(47, 109, 174, 0.8)), to(rgba(47, 109, 174, 0)));
+                color: #ffffff;
+                font-weight: bold;
+                font-size: 22px;
+                text-align: center;
+                @include text-shadow(#000 1px 1px 3px 1px);
+            }
+            .mv-comment {
+                position: relative;
+                @include box-sizing(border-box);
+                margin-top: 50px;
+                height: 160px;
+                padding: 20px 30px 10px 30px;
+                background: rgba(33,54,94, 0.7);
+                border-radius: 8px;
+                color: #ffffff;
+                z-index: 10;
+                .pointer {
+                    position: absolute;
+                    right: 20px;
+                    bottom: 0;
+                    width: 20px;
+                    height: 34px;
+                    background: url(#{$imgPath}/icon_pointer.png) no-repeat;
+                    @include background-size(20px auto);
+                    @include animation(pointer-anime 1s ease-in infinite);
+                }
+            }
+            .mv-image.character {
+                position: absolute;
+                right: -66px;
+                top: -111px;
+                z-index: 1;
+                img {
+                    display: block;
+                    width: 300px;
+                }
+            }
+        }
+    }
+}
+
+@-webkit-keyframes pointer-anime {
+    0% {
+        @include transform(translate3d(0,0,0) scale(1));
+        opacity: 0;
+    }
+    0.1% {
+        @include transform(translate3d(0,-18px,0) scale(1.1));
+        opacity: 0;
+    }
+    30% {
+        @include transform(translate3d(0,0,0) scale(1));
+        opacity: 1;
+    }
+    40% {
+        @include transform(translate3d(0,-4px,0) scale(1));
+        opacity: 1;
+    }
+    50% {
+        @include transform(translate3d(0,0,0) scale(1));
+        opacity: 1;
+    }
+    94% {
+        @include transform(translate3d(0,0,0) scale(1));
+        opacity: 1;
+    }
+    100% {
+        @include transform(translate3d(0,0,0) scale(1));
+        opacity: 0;
+    }
+}
+
+/*
+* Paragraph Style
+*/
+.icon {
+    &.next {
+        display: inline-block;
+        width: 17px;
+        height: 17px;
+        background: url(#{$imgPath}/icon_sp.png) no-repeat;
+        @include background-size(20px auto);
+        background-position: left -34px;
+    }
+
+
+    &.social {
+        display: block;
+        &.l {
+            background: url(#{$imgPath}/icon_social_l_sp.png) no-repeat;
+            @include background-size(auto 33px);
+            &.facebook {
+                width: 16px;
+                height: 30px;
+                background-position: left top;
+            }
+            &.twitter {
+                width: 32px;
+                height: 27px;
+                background-position: -19px top;
+            }
+            &.google {
+                width: 32px;
+                height: 32px;
+                background-position: -53px top;
+            }
+            &.hatena {
+                width: 30px;
+                height: 25px;
+                background-position: -87px top;
+            }
+            &.rss {
+                width: 33px;
+                height: 33px;
+                background-position: -232px top;
+            }
+        }
+
+        &.s {
+            background: url(#{$imgPath}/icon_social_s_sp.png) no-repeat;
+            @include background-size(auto 15px);
+            &.facebook {
+                width: 8px;
+                height: 15px;
+                background-position: left top;
+            }
+            &.twitter {
+                width: 16px;
+                height: 13px;
+                background-position: -9px top;
+            }
+            &.google {
+                width: 16px;
+                height: 16px;
+                background-position: -26px top;
+            }
+            &.hatena {
+                width: 15px;
+                height: 13px;
+                background-position: -43px top;
+            }
+            &.feedly {
+                width: 17px;
+                height: 15px;
+                background-position: -59px top;
+            }
+            &.pocket {
+                width: 15px;
+                height: 13px;
+                background-position: -78px top;
+            }
+            &.line {
+                width: 17px;
+                height: 15px;
+                background-position: -94px top;
+            }
+            &.rss {
+                width: 17px;
+                height: 17px;
+                background-position: -116px top;
+            }
+        }
+    }
+
+}
+
+/*
+* .socialLinkList
+*/
+.socialLinkList {
+    @include clearfix;
+    > li {
+        display: block;
+    }
+
+    &.circle {
+        > li {
+            width: 34px;
+            height: 34px;
+            background: url(#{$imgPath}/icon_social_circle_sp.png) no-repeat;
+            @include background-size(205px auto);
+            &.twitter { background-position: -42px top; }
+            &.hatena { background-position: -84px top; }
+            &.rss { background-position: -129px top; }
+            &.github { background-position: -171px top; }
+            > a {
+                display: block;
+                height: 34px;
+            }
+        }
+    }
+
+    &.share {
+        margin-top: 60px;
+        text-align: center;
+        vertical-align: top;
+        > li {
+            display: inline-block;
+            position: relative;
+            width: 60px;
+            height: 60px;
+            margin: 0 8px;
+            padding: 0;
+            background: #305097;
+            @include box-sizing(border-box);
+            border-radius: 4px;
+            > .iconWrap {
+                height: 60px;
+                .icon.social {
+                    margin: 40px auto 0;
+                    &.line { margin: 24px auto 0;}
+                }
+            }
+
+            &.twitter { background: #00aced; }
+            &.hatena { background: #008fde; }
+            &.google { background: #db4a39; }
+            &.pocket { background: #d3505a; }
+            &.line { background: #00c300; }
+
+            .count {
+                position: absolute;
+                top: 5px;
+                left: 4%;
+                width: 92%;
+                height: 15px;
+                background: #fff;
+                border-radius: 2px;
+                > .txt {
+                    font-size: 12px;
+                    text-align: center;
+                    line-height: 15px;
+                }
+                &::before {
+                    @include createStyle;
+                    bottom: -7px;
+                    left: 50%;
+                    height: 0px;
+                    width: 0px;
+                    margin: 0 0 0 -4px;
+                    border-top: #fff 8px solid;
+                    border-left: 4px solid transparent;
+                    border-right: 4px solid transparent;
+                    border-bottom: 0px solid transparent;
+                }
+            }
+
+            .btn {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 60px;
+                z-index: 10;
+                > a {
+                    display: block;
+                    width: 100%;
+                    height: 60px;
+                }
+            }
+        }
+    }
+}
+
+
+
+/*
+* footer Style
+*/
+footer {
+    @include clearfix;
+    position: relative;
+    height: 150px;
+    margin-top: 50px;
+    padding-top: 20px;
+    background: #3d3d3d;
+    .logo {
+        float: left;
+        width: 160px;
+        padding: 4px 0;
+        background: #ffffff;
+        text-align: center;
+    }
+    .copyright {
+        position: absolute;
+        bottom: 6px;
+        width: 100%;
+        font-size: 11px;
+        color: #fff;
+        text-align: center;
+    }
+    .socialLinkList.circle {
+        float: right;
+        margin-top: 0;
+        > li {
+            float: left;
+            margin-right: 10px;
+        }
+    }
 }

@@ -8,6 +8,7 @@ var gulp = require("gulp"),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     plumber = require('gulp-plumber'),
+    rename = require("gulp-rename"),
     stripDebug = require('gulp-strip-debug'),
     mainBowerFiles = require('main-bower-files'),
     del = require('del'),
@@ -28,7 +29,6 @@ var imgFiles = SOURCE_DIR + '/img/**/*.{jpg,png,gif,ico}';
 var cssFiles = SOURCE_DIR + '/**/*.css';
 var bootstrapCSSFiles = 'bower_components/bootstrap/dist/css/**/**.css';
 var bootstrapFontFiles = 'bower_components/bootstrap/dist/fonts/**/**.ttf';
-
 
 // Clean File
 gulp.task('clean-workDir', function() {
@@ -71,17 +71,6 @@ gulp.task('uglify-contrib', function () {
         ));
 });
 
-//gulp.task('uglify-releaseDir-contrib', function () {
-//    gulp.src([
-//            WORK_DIR + '/js/**/*.js',
-//            '!' + WORK_DIR + '/js/contrib/**/*.js'
-//    ])
-//        .pipe(stripDebug())
-//        .pipe(uglify())
-//        .pipe(gulp.dest(RELEASE_DIR + '/js'));
-//});
-
-
 /**
  * Copy Files
 **/
@@ -103,6 +92,18 @@ gulp.task('copy-bootstrap', function() {
     gulp.src(bootstrapFontFiles).pipe(gulp.dest(WORK_DIR + '/bootstrap/font'));
 });
 
+gulp.task('dist', function() {
+    gulp.src(SOURCE_DIR + '/js/message_view.js')
+        .pipe(gulp.dest(DIST_DIR));
+
+    gulp.src(SOURCE_DIR + '/js/message_view.js')
+        .pipe(stripDebug())
+        .pipe(uglify())
+        .pipe(rename({
+            extname: '.min.js'
+        }))
+        .pipe(gulp.dest(DIST_DIR));
+});
 
 gulp.task('copy-workDir', [
     'copy-html',

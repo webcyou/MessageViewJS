@@ -1,5 +1,10 @@
 /*
+ * Copyright (c) 2015 Daisuke Takayama
+ * Released under the MIT license
+ * http://opensource.org/licenses/mit-license.php
+ *
  * Author: Daisuke Takayama
+ * URL: http://www.webcyou.com/
  */
 'use strict';
 (function(global) {
@@ -63,7 +68,8 @@
      * @public
      * @param {{data: params}} args
      */
-    function MessageView(data, args) {
+    function MessageView(data, args, util) {
+        this.utility = util;
         this.view = document.querySelector(args.view);
         this.contents = document.querySelector(args.contents);
         this.character = document.querySelector(args.character);
@@ -71,6 +77,13 @@
         this.messageView = document.querySelector(args.messageView);
         this.message = document.querySelector(args.message);
         this.name = document.querySelector(args.name);
+        this.pointer = document.querySelector(args.pointer);
+
+        this.MESSAGE_CLOSE_CLASS = args.messageCloseClass; //default .hide
+        this.MESSAGE_OPEN_CLASS = args.messageOpenClass; //default .in
+        this.CHARACTER_CLASS = this.character.className;
+        this.MESSAGE_CLASS = this.message.className;
+
         this.init.apply(this, arguments);
     }
     MessageView.prototype = {
@@ -86,21 +99,21 @@
         },
 
         open: function() {
-            if(this.view.classList.contains('hide')) {
-                this.view.classList.remove("hide");
+            if(this.view.classList.contains(this.MESSAGE_CLOSE_CLASS)) {
+                this.view.classList.remove(this.MESSAGE_CLOSE_CLASS);
             }
         },
 
         close: function() {
-            this.view.classList.add("hide");
-            this.message.classList.add("in");
-            this.character.classList.add("in");
+            this.view.classList.add(this.MESSAGE_CLOSE_CLASS);
+            this.message.classList.add(this.MESSAGE_OPEN_CLASS);
+            this.character.classList.add(this.MESSAGE_OPEN_CLASS);
         },
 
         commentChange: function(data) {
             this.message.innerHTML = '';
             this.message.innerHTML = data;
-            this.messageView.classList.remove("in");
+            this.messageView.classList.remove(this.MESSAGE_OPEN_CLASS);
         },
 
         commentClear: function() {
@@ -109,17 +122,18 @@
 
         characterChange: function(data) {
             var that = this;
+
             if (data && data.img_url) {
                 this.characterImg.src = data.img_url;
                 setTimeout(function() {
-                    that.character.className = "img character";
-                    that.character.addEventListener('webkitTransitionEnd', function character() {
-                        that.messageView.className = "comment";
-                        this.removeEventListener("webkitTransitionEnd", character, false);
+                    that.character.className = that.CHARACTER_CLASS;
+                    that.character.addEventListener(that.utility.vendor.transitionend, function character() {
+                        that.messageView.className = that.MESSAGE_CLASS;
+                        this.removeEventListener(that.utility.vendor.transitionend, character, false);
                     });
                 }, 80);
             } else {
-                that.character.className = "img character";
+                that.character.className = that.CHARACTER_CLASS;
             }
         },
 
@@ -134,6 +148,18 @@
                 }
             }
             this.view.classList.add(sideClassName);
+        },
+
+        showPointer: function() {
+            this.pointer.style.visibility = 'visible';
+        },
+
+        hidePointer: function()  {
+            this.pointer.style.visibility = 'hidden';
+        },
+
+        disablePointer: function() {
+            this.pointer.style.display = 'none';
         }
     };
 
@@ -154,16 +180,24 @@
             messageView: ".messageView#default .mv-contents .mv-comment",
             message: ".messageView#default .mv-contents .mv-comment .val",
             name: ".messageView#default .mv-contents .mv-name",
-            messageOpenClass: "",
-            messageCloseClass: "",
+            pointer: ".messageView#default .mv-contents .mv-comment .pointer",
+            messageOpenClass: "in",
+            messageCloseClass: "hide",
             page: 0,
             speed: 'normal',
-            ignoreSkip: false
+            ignoreSkip: false,
+            loop: false,
+            isPointer: true
         };
         this.addTime = 30;
-
-        // メッセージ読み込み中のタップをはじくためのフラグ
         this.loading = false;
+
+        this.isNumber = function(x) {
+            if( typeof(x) != 'number' && typeof(x) != 'string' )
+                return false;
+            else
+                return (x == parseFloat(x) && isFinite(x));
+        };
 
         // Option Speed
         if(option !== undefined) {
@@ -184,6 +218,9 @@
                     that.addTime = 30;
                     break;
             }
+            if(this.isNumber(this.option.speed)) {
+                that.addTime = Math.abs(Math.round(this.option.speed));
+            }
         }
 
         // Message Value JSON
@@ -203,9 +240,7 @@
 
         this.messageView = document.querySelector(this.option.view);
 
-        that.onClick = function (e) {
-            // 下の要素のtouchendが反応するのを抑制する
-            // preventDefaultが必須
+        this.onClick = function (e) {
             e.stopPropagation();
             e.preventDefault();
             that.next.call(that);
@@ -223,14 +258,17 @@
                 fn();
             }
         };
-
         // メッセージスキップの判定
         this.skip = false;
     }
+
     Message.prototype = {
         init: function(val) {
             var that = this;
-            this.View = new MessageView(this.data, this.option);
+            this.View = new MessageView(this.data, this.option, this.utility);
+            if(!this.option.isPointer) {
+                this.disablePointer();
+            }
             if(this.maxNum > 0) {
                 that.open(val.data);
             }
@@ -268,9 +306,7 @@
         },
 
         next: function() {
-            // 読み込み中はメッセージに対する操作を許容しない
             if (this.loading === true) {
-                // ignoreSkipが設定されていなければスキップ
                 if (!this.option.ignoreSkip) {
                     this.skip = true;
                 }
@@ -295,8 +331,15 @@
                     this.commentChange();
                 }
             } else if (this.maxNum <= this.selectedNum) {
-                this.end();
-                this.close();
+                // loop
+                if(this.option.loop) {
+                    this.selectedNum = this.option.page;
+                    this.selectedData = this.data[this.selectedNum];
+                    this.open(this.data);
+                } else {
+                    this.end();
+                    this.close();
+                }
             }
         },
 
@@ -323,6 +366,7 @@
                 setComment = '',
                 interval = this.addTime;
 
+            this.hidePointer();
             for(var i in str) {
                 if (splitComment.length > 0) {
                     splitComment.push('<br>');
@@ -339,20 +383,17 @@
             var addChar = function() {
                 var c = splitComment.shift();
 
-                // 残りの文字がないので終了
                 if (!c) {
                     that.loading = false;
+                    that.showPointer();
                     return false;
                 }
-
                 setComment += c;
 
-                // 途中でクリックされたときは残りをいっぺんに表示する
                 if (that.skip) {
                     interval = 0;
                     setComment += splitComment.join('');
                     splitComment = [];
-                    // 終了処理を集約するためにもう一度addCharを呼ぶようにしておく
                 }
                 that.View.commentChange(setComment);
                 setTimeout(addChar, interval);
@@ -377,12 +418,25 @@
 
         commentClear: function() {
             clearTimeout(this.timer);
-            this.selectedData.message = '';
             this.View.commentClear();
         },
 
         nameChange: function() {
             this.View.nameChange(this.selectedData);
+        },
+
+        showPointer: function() {
+            if(this.option.isPointer) {
+                this.View.showPointer();
+            }
+        },
+
+        hidePointer: function()  {
+            this.View.hidePointer();
+        },
+
+        disablePointer: function() {
+            this.View.disablePointer();
         },
 
         setData: function(data) {
