@@ -1,0 +1,165 @@
+section#sample.sample001 .messageView {
+  position: relative;
+  width: 700px;
+  height: 320px;
+  margin: 80px auto 20px;
+  cursor: pointer;
+}
+section#sample.sample001 .messageView .mv-contents {
+  padding: 80px 0 0 0;
+}
+section#sample.sample001 .messageView .mv-contents .mv-name {
+  position: absolute;
+  top: 93px;
+  left: -40px;
+  width: 300px;
+  padding: 6px 10px;
+  background: rgba(47, 109, 174, 0.8);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(47, 109, 174, 0)), color-stop(0.1, rgba(47, 109, 174, 0.8)), color-stop(0.9, rgba(47, 109, 174, 0.8)), to(rgba(47, 109, 174, 0)));
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+  text-shadow: #000 1px 1px 1px;
+  text-shadow: #000 1px 1px 3px 1px;
+  z-index: 20;
+}
+section#sample.sample001 .messageView .mv-contents .mv-comment {
+  position: relative;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: 50px;
+  height: 160px;
+  padding: 20px 30px 10px 30px;
+  background: rgba(33, 54, 94, 0.7);
+  border-radius: 8px;
+  color: #ffffff;
+  z-index: 10;
+}
+section#sample.sample001 .messageView .mv-contents .mv-comment .pointer {
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+  width: 20px;
+  height: 34px;
+  background: url(../img//icon_pointer.png) no-repeat;
+  -moz-background-size: 20px auto;
+  -o-background-size: 20px auto;
+  -webkit-background-size: 20px auto;
+  background-size: 20px auto;
+  -moz-animation: pointer-anime 1s ease-in-out infinite;
+  -webkit-animation: pointer-anime 1s ease-in-out infinite;
+  animation: pointer-anime 1s ease-in-out infinite;
+}
+section#sample.sample001 .messageView .mv-contents .mv-image.character {
+  position: absolute;
+  right: -62px;
+  top: -111px;
+  z-index: 1;
+}
+section#sample.sample001 .messageView .mv-contents .mv-image.character img {
+  display: block;
+  width: 300px;
+}
+section#sample.sample001 .messageView.left .mv-name {
+  left: auto;
+  right: -23px;
+}
+section#sample.sample001 .messageView.left .mv-contents .mv-image.character {
+  right: auto;
+  left: -24px;
+}
+section#sample.sample001 .messageView.center .mv-contents .mv-image.character {
+  right: auto;
+  left: 50%;
+  margin-left: -150px;
+  -moz-animation: character-anime 3s ease-in infinite;
+  -webkit-animation: character-anime 3s ease-in infinite;
+  animation: character-anime 3s ease-in infinite;
+}
+@media screen and (max-width: 768px) {
+  section#sample.sample001 h2.mainTitle {
+    margin-top: 45px;
+  }
+  section#sample.sample001 h2.mainTitle img {
+    width: 250px;
+  }
+  section#sample.sample001 h2.mainDetail {
+    font-size: 18px;
+  }
+  section#sample.sample001 .messageView {
+    width: auto;
+    height: auto;
+    margin: 0 auto 20px;
+  }
+  section#sample.sample001 .messageView .mv-contents .mv-name {
+    top: 102px;
+    left: -11px;
+    width: 150px;
+    font-size: 15px;
+  }
+  section#sample.sample001 .messageView .mv-contents .mv-image.character {
+    right: -15px;
+    top: -16px;
+  }
+  section#sample.sample001 .messageView .mv-contents .mv-image.character img {
+    width: 210px;
+  }
+  section#sample.sample001 .messageView .mv-contents .mv-comment {
+    height: 137px;
+  }
+  section#sample.sample001 .messageView .mv-contents .mv-comment .val {
+    font-size: 14px;
+  }
+  section#sample.sample001 .messageView .mv-contents .mv-comment .pointer {
+    right: 16px;
+    bottom: -10px;
+    width: 15px;
+    height: 34px;
+    -moz-background-size: 15px auto;
+    -o-background-size: 15px auto;
+    -webkit-background-size: 15px auto;
+    background-size: 15px auto;
+  }
+  section#sample.sample001 .messageView.left .mv-name {
+    left: auto;
+    right: -9px;
+  }
+  section#sample.sample001 .messageView.left .mv-contents .mv-image.character {
+    right: auto;
+    left: -24px;
+  }
+  section#sample.sample001 .messageView.center .mv-contents .mv-image.character {
+    margin-left: -100px;
+  }
+  section#sample.sample001 .stage-buttons .btn {
+    margin-bottom: 10px;
+  }
+}
+@-webkit-keyframes character-anime {
+  0% {
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    -moz-transform: translate3d(0, -18px, 0);
+    -ms-transform: translate3d(0, -18px, 0);
+    -webkit-transform: translate3d(0, -18px, 0);
+    transform: translate3d(0, -18px, 0);
+  }
+  30% {
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
