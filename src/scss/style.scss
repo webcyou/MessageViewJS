@@ -98,6 +98,19 @@ section#top.top {
 }
 
 /*
+* navbar
+*/
+.navbar {
+    .fb-like { margin-top: 16px; }
+}
+
+.fbBox {
+    width: 450px;
+    margin: 50px auto 0;
+}
+
+
+/*
 * Paragraph Style
 */
 .icon {
@@ -109,7 +122,6 @@ section#top.top {
         @include background-size(20px auto);
         background-position: left -34px;
     }
-
 
     &.social {
         display: block;

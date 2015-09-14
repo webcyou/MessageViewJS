@@ -183,6 +183,18 @@ section#top.top .messageView .mv-contents .mv-image.character img {
   }
 }
 /*
+* navbar
+*/
+.navbar .fb-like {
+  margin-top: 16px;
+}
+
+.fbBox {
+  width: 450px;
+  margin: 50px auto 0;
+}
+
+/*
 * Paragraph Style
 */
 .icon.next {

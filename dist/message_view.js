@@ -79,6 +79,7 @@
         this.name = document.querySelector(args.name);
         this.pointer = document.querySelector(args.pointer);
 
+        this.MESSAGE_VIEW_CLASS = this.view.className; //default messageView
         this.MESSAGE_CLOSE_CLASS = args.messageCloseClass; //default .hide
         this.MESSAGE_OPEN_CLASS = args.messageOpenClass; //default .in
         this.CHARACTER_CLASS = this.character.className;
@@ -122,7 +123,6 @@
 
         characterChange: function(data) {
             var that = this;
-
             if (data && data.img_url) {
                 this.characterImg.src = data.img_url;
                 setTimeout(function() {
@@ -146,6 +146,7 @@
                 if(this.view.classList.contains(sideClassName)) {
                     this.view.classList.remove(sideClassName);
                 }
+                this.view.className = this.MESSAGE_VIEW_CLASS;
             }
             this.view.classList.add(sideClassName);
         },
@@ -316,7 +317,7 @@
             this.selectedNum += 1;
             if(this.maxNum > this.selectedNum) {
                 this.selectedData = this.data[this.selectedNum];
-                if(this.selectedData.side !== undefined) {
+                if(this.selectedData.side_class !== undefined) {
                     this.sideChange();
                 }
                 if(this.selectedData.name) {
