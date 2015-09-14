@@ -67,6 +67,9 @@ p a {
   text-align: center;
 }
 
+section#top.top .jumbotron.top {
+  overflow: hidden;
+}
 section#top.top .messageView {
   position: relative;
   width: 700px;
@@ -91,6 +94,7 @@ section#top.top .messageView .mv-contents .mv-name {
   text-align: center;
   text-shadow: #000 1px 1px 1px;
   text-shadow: #000 1px 1px 3px 1px;
+  z-index: 20;
 }
 section#top.top .messageView .mv-contents .mv-comment {
   position: relative;
@@ -122,13 +126,67 @@ section#top.top .messageView .mv-contents .mv-comment .pointer {
 }
 section#top.top .messageView .mv-contents .mv-image.character {
   position: absolute;
-  right: -66px;
+  right: -62px;
   top: -111px;
   z-index: 1;
 }
 section#top.top .messageView .mv-contents .mv-image.character img {
   display: block;
   width: 300px;
+}
+@media screen and (max-width: 768px) {
+  section#top.top h2.mainTitle {
+    margin-top: 45px;
+  }
+  section#top.top h2.mainTitle img {
+    width: 250px;
+  }
+  section#top.top h2.mainDetail {
+    font-size: 18px;
+  }
+  section#top.top .messageView {
+    width: auto;
+    height: auto;
+    margin: 0 auto 20px;
+  }
+  section#top.top .messageView .mv-contents .mv-name {
+    top: 102px;
+    left: -11px;
+    width: 150px;
+    font-size: 15px;
+  }
+  section#top.top .messageView .mv-contents .mv-image.character {
+    right: -15px;
+    top: -16px;
+  }
+  section#top.top .messageView .mv-contents .mv-image.character img {
+    width: 210px;
+  }
+  section#top.top .messageView .mv-contents .mv-comment {
+    height: 137px;
+  }
+  section#top.top .messageView .mv-contents .mv-comment .val {
+    font-size: 14px;
+  }
+  section#top.top .messageView .mv-contents .mv-comment .pointer {
+    right: 16px;
+    bottom: -10px;
+    width: 15px;
+    height: 34px;
+    -moz-background-size: 15px auto;
+    -o-background-size: 15px auto;
+    -webkit-background-size: 15px auto;
+    background-size: 15px auto;
+  }
+  section#top.top .stage-buttons .btn {
+    margin-bottom: 10px;
+  }
+  section#top.top .socialLinkList.share {
+    margin-top: 30px;
+  }
+  section#top.top .optionsTable {
+    overflow: scroll;
+  }
 }
 
 @-webkit-keyframes pointer-anime {
