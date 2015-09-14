@@ -6,10 +6,10 @@ p a {
     font-size: 18px;
     text-align: center;
 }
+.jumbotron.top { overflow: hidden; }
 
 //top
 section#top.top {
-    .jumbotron.top { overflow: hidden; }
     .messageView {
         position: relative;
         width: 700px;

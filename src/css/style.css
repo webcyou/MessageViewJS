@@ -67,9 +67,10 @@ p a {
   text-align: center;
 }
 
-section#top.top .jumbotron.top {
+.jumbotron.top {
   overflow: hidden;
 }
+
 section#top.top .messageView {
   position: relative;
   width: 700px;
