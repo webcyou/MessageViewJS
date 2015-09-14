@@ -58,10 +58,10 @@
         </div>
 
 
-        <div class="jumbotron">
+        <div class="jumbotron top">
             <div class="container">
-                <h2 class="text-center"><img src="./img/main_logo.png" width="400" alt="Message View.js"/></h2>
-                <h2 class="text-center">Talking Scene JavaScript Library<br>HTML5, WebGame etc..</h2>
+                <h2 class="mainTitle text-center"><img src="./img/main_logo.png" width="400" alt="Message View.js"/></h2>
+                <h2 class="mainDetail text-center">Talking Scene JavaScript Library<br>HTML5, WebGame etc..</h2>
 
 
                 <div class="messageView" id="default">
@@ -366,108 +366,110 @@
 
         <div class="container">
             <h2>Options Reference</h2>
-            <table class="table table-striped table-bordered">
-                <thead>
-                <tr>
-                    <th>OptionName</th>
-                    <th>DefaultValue</th>
-                    <th>SetValue</th>
-                    <th>OptionDetail</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>view</td>
-                    <td>.messageView#default</td>
-                    <td>className, idName, element</td>
-                    <td>MessageViewの大枠となる要素</td>
-                </tr>
-                <tr>
-                    <td>contents</td>
-                    <td>.messageView#default .mv-contents</td>
-                    <td>className, idName, element</td>
-                    <td>MessageViewのcontentsとなる要素</td>
-                </tr>
-                <tr>
-                    <td>character</td>
-                    <td>.messageView#default .mv-contents .mv-image.character</td>
-                    <td>className, idName, element</td>
-                    <td>MessageViewのcharacterとなる要素</td>
-                </tr>
-                <tr>
-                    <td>characterImg</td>
-                    <td>.messageView#default .mv-contents .mv-image.character img</td>
-                    <td>img element</td>
-                    <td>MessageViewのcharacterのimg要素</td>
-                </tr>
-                <tr>
-                    <td>messageView</td>
-                    <td>.messageView#default .mv-contents .mv-comment</td>
-                    <td>className, idName, element</td>
-                    <td>メッセージ表示する親要素</td>
-                </tr>
-                <tr>
-                    <td>message</td>
-                    <td>.messageView#default .mv-contents .mv-comment .val</td>
-                    <td>className, idName, element</td>
-                    <td>メッセージを挿入する要素</td>
-                </tr>
-                <tr>
-                    <td>name</td>
-                    <td>.messageView#default .mv-contents .mv-name</td>
-                    <td>className, idName, element</td>
-                    <td>characterの名前表示する要素</td>
-                </tr>
-                <tr>
-                    <td>pointer</td>
-                    <td>.messageView#default .mv-contents .mv-comment .pointer</td>
-                    <td>className, idName, element</td>
-                    <td>メッセージのポインタ要素</td>
-                </tr>
-                <tr>
-                    <td>messageOpenClass</td>
-                    <td>in</td>
-                    <td>className ( string )</td>
-                    <td>MessageViewを表示する際、追加するクラス名</td>
-                </tr>
-                <tr>
-                    <td>messageCloseClass</td>
-                    <td>hide</td>
-                    <td>className ( string )</td>
-                    <td>MessageViewを非表示する際（終了後）、追加するクラス名</td>
-                </tr>
-                <tr>
-                    <td>page</td>
-                    <td>0</td>
-                    <td>Number</td>
-                    <td>Messageを開始するページナンバー</td>
-                </tr>
-                <tr>
-                    <td>speed</td>
-                    <td>normal</td>
-                    <td>"normal", "fast", "slow", Number</td>
-                    <td>Messageを表示するスピード</td>
-                </tr>
-                <tr>
-                    <td>ignoreSkip</td>
-                    <td>false</td>
-                    <td>boolean</td>
-                    <td>Messageのスキップを無効</td>
-                </tr>
-                <tr>
-                    <td>loop</td>
-                    <td>false</td>
-                    <td>boolean</td>
-                    <td>Messageをループさせるか</td>
-                </tr>
-                <tr>
-                    <td>isPointer</td>
-                    <td>true</td>
-                    <td>boolean</td>
-                    <td>Messageのポインター表示</td>
-                </tr>
-                </tbody>
-            </table>
+            <div class="optionsTable">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                    <tr>
+                        <th>OptionName</th>
+                        <th>DefaultValue</th>
+                        <th>SetValue</th>
+                        <th>OptionDetail</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>view</td>
+                        <td>.messageView#default</td>
+                        <td>className, idName, element</td>
+                        <td>MessageViewの大枠となる要素</td>
+                    </tr>
+                    <tr>
+                        <td>contents</td>
+                        <td>.messageView#default .mv-contents</td>
+                        <td>className, idName, element</td>
+                        <td>MessageViewのcontentsとなる要素</td>
+                    </tr>
+                    <tr>
+                        <td>character</td>
+                        <td>.messageView#default .mv-contents .mv-image.character</td>
+                        <td>className, idName, element</td>
+                        <td>MessageViewのcharacterとなる要素</td>
+                    </tr>
+                    <tr>
+                        <td>characterImg</td>
+                        <td>.messageView#default .mv-contents .mv-image.character img</td>
+                        <td>img element</td>
+                        <td>MessageViewのcharacterのimg要素</td>
+                    </tr>
+                    <tr>
+                        <td>messageView</td>
+                        <td>.messageView#default .mv-contents .mv-comment</td>
+                        <td>className, idName, element</td>
+                        <td>メッセージ表示する親要素</td>
+                    </tr>
+                    <tr>
+                        <td>message</td>
+                        <td>.messageView#default .mv-contents .mv-comment .val</td>
+                        <td>className, idName, element</td>
+                        <td>メッセージを挿入する要素</td>
+                    </tr>
+                    <tr>
+                        <td>name</td>
+                        <td>.messageView#default .mv-contents .mv-name</td>
+                        <td>className, idName, element</td>
+                        <td>characterの名前表示する要素</td>
+                    </tr>
+                    <tr>
+                        <td>pointer</td>
+                        <td>.messageView#default .mv-contents .mv-comment .pointer</td>
+                        <td>className, idName, element</td>
+                        <td>メッセージのポインタ要素</td>
+                    </tr>
+                    <tr>
+                        <td>messageOpenClass</td>
+                        <td>in</td>
+                        <td>className ( string )</td>
+                        <td>MessageViewを表示する際、追加するクラス名</td>
+                    </tr>
+                    <tr>
+                        <td>messageCloseClass</td>
+                        <td>hide</td>
+                        <td>className ( string )</td>
+                        <td>MessageViewを非表示する際（終了後）、追加するクラス名</td>
+                    </tr>
+                    <tr>
+                        <td>page</td>
+                        <td>0</td>
+                        <td>Number</td>
+                        <td>Messageを開始するページナンバー</td>
+                    </tr>
+                    <tr>
+                        <td>speed</td>
+                        <td>normal</td>
+                        <td>"normal", "fast", "slow", Number</td>
+                        <td>Messageを表示するスピード</td>
+                    </tr>
+                    <tr>
+                        <td>ignoreSkip</td>
+                        <td>false</td>
+                        <td>boolean</td>
+                        <td>Messageのスキップを無効</td>
+                    </tr>
+                    <tr>
+                        <td>loop</td>
+                        <td>false</td>
+                        <td>boolean</td>
+                        <td>Messageをループさせるか</td>
+                    </tr>
+                    <tr>
+                        <td>isPointer</td>
+                        <td>true</td>
+                        <td>boolean</td>
+                        <td>Messageのポインター表示</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
 
