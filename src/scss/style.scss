@@ -68,11 +68,6 @@ section#top.top {
     }
 
     @media screen and (max-width: 768px) {
-        h2.mainTitle {
-            margin-top: 45px;
-            img { width: 250px; }
-        }
-        h2.mainDetail { font-size: 18px; }
         .messageView {
             width: auto;
             height: auto;
@@ -108,6 +103,14 @@ section#top.top {
         .socialLinkList.share { margin-top: 30px; }
         .optionsTable { overflow: scroll; }
     }
+}
+
+@media screen and (max-width: 768px) {
+    h2.mainTitle {
+        margin-top: 45px;
+        img { width: 250px; }
+    }
+    h2.mainDetail { font-size: 18px; }
 }
 
 @-webkit-keyframes pointer-anime {
