@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="「MessageViewJS」は、ゲーム内でよくある会話シーンを簡単実装できる、JavaScriptライブラリです。">
+    <meta name="keywords" content="Webゲーム,HTML5,会話シーン,JavaScript,ライブラリ">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="MessageViewJS - Talking Scene JavaScript Library">
+    <meta property="og:description" content="「MessageViewJS」は、ゲーム内でよくある会話シーンを簡単実装できる、JavaScriptライブラリです。">
+    <meta property="og:url" content="http://webcyou.com/message_view_js/">
+    <meta property="og:image" content="http://webcyou.com/message_view_js/demo/img/screen_shot_ogp.png">
+    <meta property="og:site_name" content="MessageViewJS - Talking Scene JavaScript Library">
+
+    <title>MessageView.js</title>
+    <link rel="shortcut icon" href="http://webcyou.com/message_view_js/demo/img/favicon.ico">
+    <link href="../css/style.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../css/sample.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <script src="../js/message_view.js" type="text/javascript"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var message = new MessageViewer({
+                "data": [{
+                    "message": "それから僕たちは花火大会へと向かった。<br>この花火大会を迎えることによって<br>毎年僕は夏の終わりを感じていたのだった。<br><br>先ほど喧嘩して機嫌を悪くした美佳沙の顔にも少しずつ笑みが浮かんできた。"
+                },
+                {
+                    "message": "ドォーン！<br>ドーン！ドーン！<br><br>僕たちは花火の音の鳴る方へと自然に足が進む。"
+                },
+                {
+                    "message": "ドォーン！<br>ドーン！ドーン！<br><br>人混みの中を切り分け、夜空に浮かぶ花火に少しでも近づこうと僕たちは足を進める。<br>「この辺が丁度見やすい場所でもあるな。」と僕は思い、少し歩くペースを落とした。<br><br>その時だった。"
+                },
+                {
+                    "message": "「ハッ」とした表情をした美佳沙が立ち止まり、<br>少し慌ながらも僕に向かってこう言った。"
+                },
+                {
+                    "message": "「このJavaScriptライブラリ。」<br>「MessageViewJSだったかしら？」<br><br>「とても便利じゃない？？」"
+                },
+                {
+                    "message": "もう返答は明確だった。<br><br>不思議そうな表情のまま返答を待つ美佳沙に向かって、<br>僕は少しはニヒルな笑顔を浮かべこう答えた。"
+                },
+                {
+                    "message": "「OH!! YES!!」"
+                }],
+                "option": {
+                    "loop": true
+                }
+            });
+        }, false);
+    </script>
+</head>
+<body>
+<section id="sample" class="sample004">
+
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="../" class="navbar-brand"><img src="../img/main_logo.png" width="150" alt="Message View.js"/></a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://www.webcyou.com/" target="_blank">Blog</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="jumbotron top">
+    <div class="container">
+        <h2 class="mainTitle text-center"><img src="../img/main_logo.png" width="400" alt="Message View.js"/></h2>
+        <h2 class="mainDetail text-center">Talking Scene JavaScript Library<br>HTML5, WebGame etc..</h2>
+
+
+        <div class="messageView" id="default">
+            <div class="mv-contents">
+                <p class="mv-name"></p>
+                <div class="mv-comment">
+                    <p class="val"></p>
+                    <p class="pointer"></p>
+                </div>
+                <p class="mv-image character"><img src="" alt=""/></p>
+            </div>
+        </div><!-- /.messageView -->
+
+
+        <div class="text-center stage-buttons">
+            <a class="btn btn-large btn-default" href="https://github.com/webcyou/MessageViewJS" target="_blank">
+                <i class="icon-github-sign"></i> View on GitHub
+            </a>
+            <a class="btn btn-large btn-primary" href="http://webcyou.com/message_view_js/message_view_js_1_0_1.zip">
+                <i class="icon-download-alt icon-large"></i> Download
+                <span class="version">(1.0.1)</span>
+            </a>
+        </div>
+
+    </div>
+</div><!-- /.jumbotron -->
+
+
+<div class="container">
+    <h2>Source</h2>
+    <ul class="nav nav-tabs" ng-class="{'nav-stacked': vertical}" ng-transclude=""><li ng-class="{active: active, disabled: disabled}" heading="index.html" class="ng-isolate-scope active">
+        <a ng-click="select()" tab-heading-transclude="" class="ng-binding">index.html</a>
+    </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active">
+            <pre>var message = new MessageViewer({
+    &quot;data&quot;: [{
+        &quot;message&quot;: &quot;それから僕たちは花火大会へと向かった。&lt;br&gt;この花火大会を迎えることによって&lt;br&gt;毎年僕は夏の終わりを感じていたのだった。&lt;br&gt;&lt;br&gt;先ほど喧嘩して機嫌を悪くした美佳沙の顔にも少しずつ笑みが浮かんできた。&quot;
+    },
+    {
+        &quot;message&quot;: &quot;ドォーン！&lt;br&gt;ドーン！ドーン！&lt;br&gt;&lt;br&gt;僕たちは花火の音の鳴る方へと自然に足が進む。&quot;
+    },
+    {
+        &quot;message&quot;: &quot;ドォーン！&lt;br&gt;ドーン！ドーン！&lt;br&gt;&lt;br&gt;人混みの中を切り分け、夜空に浮かぶ花火に少しでも近づこうと僕たちは足を進める。&lt;br&gt;「この辺が丁度見やすい場所でもあるな。」と僕は思い、少し歩くペースを落とした。&lt;br&gt;&lt;br&gt;その時だった。&quot;
+    },
+    {
+        &quot;message&quot;: &quot;「ハッ」とした表情をした美佳沙が立ち止まり、&lt;br&gt;少し慌ながらも僕に向かってこう言った。&quot;
+    },
+    {
+        &quot;message&quot;: &quot;「このJavaScriptライブラリ。」&lt;br&gt;「MessageViewJSだったかしら？」&lt;br&gt;&lt;br&gt;「とても便利じゃない？？」&quot;
+    },
+    {
+        &quot;message&quot;: &quot;もう返答は明確だった。&lt;br&gt;&lt;br&gt;不思議そうな表情のまま返答を待つ美佳沙に向かって、&lt;br&gt;僕は少しはニヒルな笑顔を浮かべこう答えた。&quot;
+    },
+    {
+        &quot;message&quot;: &quot;「OH!! YES!!」&quot;
+    }],
+    &quot;option&quot;: {
+        &quot;loop&quot;: true
+    }
+});</pre>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <h2>Demo Creator</h2>
+    <p>Daisuke Takayama</p>
+    <p>web帳：<a href="http://www.webcyou.com/" target="_blank">http://www.webcyou.com/</a></p>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="logo"><img src="../img/main_logo.png" width="150" alt="Message View.js"/></p>
+        <ul class="socialLinkList circle">
+            <li class="facebook"><a href="https://www.facebook.com/webcyou" target="_blank"></a></li>
+            <li class="twitter"><a href="https://twitter.com/webcyou" target="_blank"></a></li>
+            <li class="hatena"><a href="http://b.hatena.ne.jp/entry/www.webcyou.com/" target="_blank"></a></li>
+            <li class="github"><a href="https://github.com/webcyou" target="_blank"></a></li>
+        </ul>
+    </div>
+    <p class="copyright">Copyright 2015 Webcyou. MessageViewJS All rights reserved.</p>
+</footer>
+</section>
+</body>
+</html>

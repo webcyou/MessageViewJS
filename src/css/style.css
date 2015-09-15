@@ -136,15 +136,6 @@ section#top.top .messageView .mv-contents .mv-image.character img {
   width: 300px;
 }
 @media screen and (max-width: 768px) {
-  section#top.top h2.mainTitle {
-    margin-top: 45px;
-  }
-  section#top.top h2.mainTitle img {
-    width: 250px;
-  }
-  section#top.top h2.mainDetail {
-    font-size: 18px;
-  }
   section#top.top .messageView {
     width: auto;
     height: auto;
@@ -190,6 +181,18 @@ section#top.top .messageView .mv-contents .mv-image.character img {
   }
 }
 
+@media screen and (max-width: 768px) {
+  h2.mainTitle {
+    margin-top: 45px;
+  }
+  h2.mainTitle img {
+    width: 250px;
+  }
+
+  h2.mainDetail {
+    font-size: 18px;
+  }
+}
 @-webkit-keyframes pointer-anime {
   0% {
     -moz-transform: translate3d(0, 0, 0) scale(1);

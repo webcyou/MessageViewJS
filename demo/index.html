@@ -162,9 +162,9 @@
         <div class="container">
             <h2>Samples</h2>
             <div class="row">
-                <div class="col-sm-6 col-md-4">
+                <div class="col-sm-4 col-md-4">
                     <div class="thumbnail">
-                        <img src="./img/sample001/screen_shot.png" width="300" alt="coming soon">
+                        <img src="./img/sample001/screen_shot.png" width="300" alt="demo001">
                         <div class="caption">
                             <h3>Multi Character</h3>
                             <p>複数人の台詞の掛け合いとなっております。</p>
@@ -172,20 +172,52 @@
                         <p class="text-center"><a class="btn btn-primary" href="./html/sample001.html">Go Sample Page</a></p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4">
+                <div class="col-sm-4 col-md-4">
+                    <div class="thumbnail">
+                        <img src="./img/sample002/screen_shot.png" width="300" alt="demo002">
+                        <div class="caption">
+                            <h3>Effect Arrangement</h3>
+                            <p>フラッシュ等によるエフェクト例となります。</p>
+                        </div>
+                        <p class="text-center"><a class="btn btn-primary" href="./html/sample002.html">Go Sample Page</a></p>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <div class="thumbnail">
+                        <img src="./img/sample003/screen_shot.png" width="300" alt="demo003">
+                        <div class="caption">
+                            <h3>Impact</h3>
+                            <p>インパクトを与える際の使用例となります。</p>
+                        </div>
+                        <p class="text-center"><a class="btn btn-primary" href="./html/sample003.html">Go Sample Page</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 col-md-4">
+                    <div class="thumbnail">
+                        <img src="./img/sample004/screen_shot.png" width="250" alt="demo004">
+                        <div class="caption">
+                            <h3>Novel</h3>
+                            <p>小説風アレンジの例です。</p>
+                        </div>
+                        <p class="text-center"><a class="btn btn-primary" href="./html/sample004.html">Go Sample Page</a></p>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4">
                     <div class="thumbnail">
                         <img src="./img/pic_coming_soon.png" width="250" alt="coming soon">
                         <div class="caption">
-                            <h3>Sample Demo 002</h3>
+                            <h3>Sample Demo 005</h3>
                             <p>すみません。。現在準備中です。<br />今しばらくお待ち下さい。</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4">
+                <div class="col-sm-4 col-md-4">
                     <div class="thumbnail">
                         <img src="./img/pic_coming_soon.png" width="250" alt="coming soon">
                         <div class="caption">
-                            <h3>Sample Demo 003</h3>
+                            <h3>Sample Demo 006</h3>
                             <p>すみません。。現在準備中です。<br />今しばらくお待ち下さい。</p>
                         </div>
                     </div>
@@ -193,7 +225,7 @@
             </div>
         </div>
 
-
+        <!-- example -->
         <div class="container">
             <h2>The Basics</h2>
             <ul class="nav nav-tabs" ng-class="{'nav-stacked': vertical}" ng-transclude=""><li ng-class="{active: active, disabled: disabled}" heading="index.html" class="ng-isolate-scope active">
@@ -217,143 +249,145 @@
             }, false);
         &lt;/script&gt;
     &lt;/head&gt;
+
+    &lt;div class=&quot;messageView&quot; id=&quot;default&quot;&gt;
+        &lt;div class=&quot;mv-contents&quot;&gt;
+            &lt;p class=&quot;mv-name&quot;&gt;&lt;/p&gt;
+            &lt;div class=&quot;mv-comment&quot;&gt;
+                &lt;p class=&quot;val&quot;&gt;&lt;/p&gt;
+                &lt;p class=&quot;pointer&quot;&gt;&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;p class=&quot;mv-image character&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;&quot;/&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
 &lt;/html&gt;</pre>
 
                 </div>
             </div>
 
-
             <h2>Multi</h2>
             <ul class="nav nav-tabs" ng-class="{'nav-stacked': vertical}" ng-transclude=""><li ng-class="{active: active, disabled: disabled}" heading="index.html" class="ng-isolate-scope active">
-                <a ng-click="select()" tab-heading-transclude="" class="ng-binding">index.html</a>
+                <a ng-click="select()" tab-heading-transclude="" class="ng-binding">JavaScript</a>
             </li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active">
-                    <pre>&lt;script&gt;
-    var message = new MessageViewer({
-        &quot;data&quot;: [{
-            &quot;name&quot;: &quot;生方 すみれ&quot;,
-            &quot;message&quot;: &quot;はじめまして！&quot;,
-            &quot;img_url&quot;: &quot;/img/character_0001.png&quot;
-        },
-        {
-            &quot;message&quot;: &quot;こんにちは！&quot;
-        }]
-    });
-&lt;/script&gt;</pre>
+                    <pre>
+var message = new MessageViewer({
+    &quot;data&quot;: [{
+        &quot;name&quot;: &quot;生方 すみれ&quot;,
+        &quot;message&quot;: &quot;はじめまして！&quot;,
+        &quot;img_url&quot;: &quot;/img/character_0001.png&quot;
+    },
+    {
+        &quot;message&quot;: &quot;こんにちは！&quot;
+    }]
+});
+</pre>
 
                 </div>
             </div>
-
 
             <h2>Character Change</h2>
             <ul class="nav nav-tabs" ng-class="{'nav-stacked': vertical}" ng-transclude=""><li ng-class="{active: active, disabled: disabled}" heading="index.html" class="ng-isolate-scope active">
-                <a ng-click="select()" tab-heading-transclude="" class="ng-binding">index.html</a>
+                <a ng-click="select()" tab-heading-transclude="" class="ng-binding">JavaScript</a>
             </li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active">
-                    <pre>&lt;script&gt;
-    var message = new MessageViewer({
-        &quot;data&quot;: [{
-            &quot;name&quot;: &quot;生方 すみれ&quot;,
-            &quot;message&quot;: &quot;はじめまして！&quot;,
-            &quot;img_url&quot;: &quot;/img/character_0001.png&quot;
-        },
-        {
-            &quot;name&quot;: &quot;高山 大介&quot;,
-            &quot;message&quot;: &quot;こんにちは！&quot;
-            &quot;img_url&quot;: &quot;/img/character_0002.png&quot;
-        }]
-    });
-&lt;/script&gt;</pre>
+                    <pre>
+var message = new MessageViewer({
+    &quot;data&quot;: [{
+        &quot;name&quot;: &quot;生方 すみれ&quot;,
+        &quot;message&quot;: &quot;はじめまして！&quot;,
+        &quot;img_url&quot;: &quot;/img/character_0001.png&quot;
+    },
+    {
+        &quot;name&quot;: &quot;高山 大介&quot;,
+        &quot;message&quot;: &quot;こんにちは！&quot;
+        &quot;img_url&quot;: &quot;/img/character_0002.png&quot;
+    }]
+});</pre>
 
                 </div>
             </div>
-
 
             <h2>Multi Class Change</h2>
             <ul class="nav nav-tabs" ng-class="{'nav-stacked': vertical}" ng-transclude=""><li ng-class="{active: active, disabled: disabled}" heading="index.html" class="ng-isolate-scope active">
-                <a ng-click="select()" tab-heading-transclude="" class="ng-binding">index.html</a>
+                <a ng-click="select()" tab-heading-transclude="" class="ng-binding">JavaScript</a>
             </li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active">
-                    <pre>&lt;script&gt;
-    var message = new MessageViewer({
-        &quot;data&quot;: [{
-            &quot;side_class&quot;: &quot;right&quot;,
-            &quot;name&quot;: &quot;生方 すみれ&quot;,
-            &quot;message&quot;: &quot;はじめまして！&quot;,
-            &quot;img_url&quot;: &quot;/img/character_0001.png&quot;
-        },
-        {
-            &quot;side_class&quot;: &quot;left&quot;,
-            &quot;name&quot;: &quot;高山 大介&quot;,
-            &quot;message&quot;: &quot;こんにちは！&quot;
-            &quot;img_url&quot;: &quot;/img/character_0002.png&quot;
-        },
-        {
-            &quot;side_class&quot;: &quot;right&quot;,
-            &quot;name&quot;: &quot;生方 すみれ&quot;,
-            &quot;message&quot;: &quot;今日はいい天気ですね！&quot;,
-            &quot;img_url&quot;: &quot;/img/character_0001.png&quot;
-        }]
-    });
-&lt;/script&gt;</pre>
+                    <pre>
+var message = new MessageViewer({
+    &quot;data&quot;: [{
+        &quot;side_class&quot;: &quot;right&quot;,
+        &quot;name&quot;: &quot;生方 すみれ&quot;,
+        &quot;message&quot;: &quot;はじめまして！&quot;,
+        &quot;img_url&quot;: &quot;/img/character_0001.png&quot;
+    },
+    {
+        &quot;side_class&quot;: &quot;left&quot;,
+        &quot;name&quot;: &quot;高山 大介&quot;,
+        &quot;message&quot;: &quot;こんにちは！&quot;
+        &quot;img_url&quot;: &quot;/img/character_0002.png&quot;
+    },
+    {
+        &quot;side_class&quot;: &quot;right&quot;,
+        &quot;name&quot;: &quot;生方 すみれ&quot;,
+        &quot;message&quot;: &quot;今日はいい天気ですね！&quot;,
+        &quot;img_url&quot;: &quot;/img/character_0001.png&quot;
+    }]
+});
+</pre>
 
                 </div>
             </div>
-
 
             <h2>CallBack Function</h2>
             <ul class="nav nav-tabs" ng-class="{'nav-stacked': vertical}" ng-transclude=""><li ng-class="{active: active, disabled: disabled}" heading="index.html" class="ng-isolate-scope active">
-                <a ng-click="select()" tab-heading-transclude="" class="ng-binding">index.html</a>
+                <a ng-click="select()" tab-heading-transclude="" class="ng-binding">JavaScript</a>
             </li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active">
-                    <pre>&lt;script&gt;
-    var message = new MessageViewer({
-        &quot;data&quot;: [{
-            &quot;name&quot;: &quot;生方 すみれ&quot;,
-            &quot;message&quot;: &quot;はじめまして！&quot;,
-            &quot;img_url&quot;: &quot;/img/character_0001.png&quot;
-        }]
-    }, function() {
-       console.log(&quot;callBack&quot;);
-    });
-&lt;/script&gt;</pre>
+                    <pre>
+var message = new MessageViewer({
+    &quot;data&quot;: [{
+        &quot;name&quot;: &quot;生方 すみれ&quot;,
+        &quot;message&quot;: &quot;はじめまして！&quot;,
+        &quot;img_url&quot;: &quot;/img/character_0001.png&quot;
+    }]
+}, function() {
+   console.log(&quot;callBack&quot;);
+});</pre>
 
                 </div>
             </div>
-
 
             <h2>Options</h2>
             <ul class="nav nav-tabs" ng-class="{'nav-stacked': vertical}" ng-transclude=""><li ng-class="{active: active, disabled: disabled}" heading="index.html" class="ng-isolate-scope active">
-                <a ng-click="select()" tab-heading-transclude="" class="ng-binding">index.html</a>
+                <a ng-click="select()" tab-heading-transclude="" class="ng-binding">JavaScript</a>
             </li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active">
-                    <pre>&lt;script&gt;
-    var message = new MessageViewer({
-        &quot;data&quot;: [{
-            &quot;name&quot;: &quot;生方 すみれ&quot;,
-            &quot;message&quot;: &quot;はじめまして！&quot;,
-            &quot;img_url&quot;: &quot;/img/character_0001.png&quot;
-        }],
-        &quot;option&quot;: {
-            &quot;loop&quot;: true,
-            &quot;speed&quot;: &quot;fast&quot;
-        }
-    });
-&lt;/script&gt;</pre>
+                    <pre>var message = new MessageViewer({
+    &quot;data&quot;: [{
+        &quot;name&quot;: &quot;生方 すみれ&quot;,
+        &quot;message&quot;: &quot;はじめまして！&quot;,
+        &quot;img_url&quot;: &quot;/img/character_0001.png&quot;
+    }],
+    &quot;option&quot;: {
+        &quot;loop&quot;: true,
+        &quot;speed&quot;: &quot;fast&quot;
+    }
+});</pre>
 
                 </div>
             </div>
-        </div>
+        </div><!-- /example -->
 
 
         <div class="container" id="reference">
