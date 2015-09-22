@@ -189,7 +189,7 @@
             ignoreSkip: false,
             loop: false,
             isPointer: true,
-            isClose: false
+            isClose: true
         };
         this.addTime = 30;
         this.loading = false;
