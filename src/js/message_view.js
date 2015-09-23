@@ -188,7 +188,8 @@
             speed: 'normal',
             ignoreSkip: false,
             loop: false,
-            isPointer: true
+            isPointer: true,
+            isClose: true
         };
         this.addTime = 30;
         this.loading = false;
@@ -339,7 +340,9 @@
                     this.open(this.data);
                 } else {
                     this.end();
-                    this.close();
+                    if (this.option.isClose) {
+                        this.close();
+                    }
                 }
             }
         },
