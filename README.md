@@ -138,6 +138,7 @@ var message = new MessageViewer({
 | ignoreSkip | false |boolean|Messageのスキップを無効|
 | loop | false |boolean|Messageをループさせるか|
 | isPointer | false |boolean| Messageのポインター表示 |
+| isClose | true |boolean| MessageView終了後のView表示 |
 
 ### Author
 Daisuke Takayama
