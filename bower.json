@@ -1,7 +1,7 @@
 {
   "name": "message_view",
   "version": "1.0.2",
-  "main": "message_view.js",
+  "main": "dist/message_view.js",
   "authors": [
     "daisuke.takayama"
   ],
