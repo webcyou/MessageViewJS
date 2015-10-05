@@ -6,7 +6,6 @@
     "daisuke.takayama"
   ],
   "license": "MIT",
-  "private": false,
   "ignore": [
     "**/.*",
     "node_modules",
