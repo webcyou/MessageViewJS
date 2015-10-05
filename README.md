@@ -11,6 +11,12 @@ HTML5, WebGame etc...
 ### demo
 [デモページ](http://webcyou.com/message_view_js/demo/)
 
+### Install
+
+#### Bower
+```
+bower install message_view.js
+```
 
 ### The Basics
 
