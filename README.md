@@ -18,6 +18,11 @@ HTML5, WebGame etc...
 bower install message_view.js
 ```
 
+#### npm
+```
+npm install message-view-js
+```
+
 ### The Basics
 
 ```
