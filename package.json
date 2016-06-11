@@ -1,6 +1,6 @@
 {
   "name": "message_view",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "web帳:message_view.js",
   "main": "index.js",
   "scripts": {
