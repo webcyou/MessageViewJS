@@ -1,14 +1,17 @@
 {
-  "name": "message_view",
+  "name": "message-view-js",
   "version": "1.0.2",
-  "description": "web帳:message_view.js",
-  "main": "index.js",
+  "description": "「MessageViewJS」はゲーム内でよくある会話シーンを簡単実装できる、JavaScriptライブラリです。Talking Scene JavaScript Library HTML5, WebGame etc...",
+  "main": "dist/message_view.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "javaScript",
-    "message"
+    "message",
+    "game",
+    "Talking Scene",
+    "Library"
   ],
   "author": "daisuke.takayama",
   "license": "MIT",
